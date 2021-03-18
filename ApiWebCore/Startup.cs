@@ -1,4 +1,9 @@
 using API.Data;
+using API.Entities;
+using API.IRepository;
+using API.IServices;
+using API.Repository;
+using API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +32,13 @@ namespace ApiWebCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ContextDb>();
+
+            services.AddTransient<IContextDb, ContextDb>();
+            services.AddTransient<IContextFactory, ContextFactory>();
+
+            services.AddTransient<IRepository<User>, Repository<User>>();
+
+            services.AddTransient<IUserService, UserService>();
 
             services.AddControllers();
         }

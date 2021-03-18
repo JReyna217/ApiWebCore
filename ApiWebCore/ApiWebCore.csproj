@@ -14,6 +14,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\API.Data\API.Data.csproj" />
+    <ProjectReference Include="..\API.IServices\API.IServices.csproj" />
+    <ProjectReference Include="..\API.Repository\API.Repository.csproj" />
+    <ProjectReference Include="..\API.Services\API.Services.csproj" />
   </ItemGroup>
 
 
