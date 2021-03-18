@@ -12,13 +12,15 @@ namespace API.Data
     {
         //public ContextDb(DbContextOptions<ContextDb> options) : base(options)
         //{
-
+        //    ChangeTracker.LazyLoadingEnabled = false;
         //}
 
         public ContextDb()
         {
             ChangeTracker.LazyLoadingEnabled = false;
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlServer("Server=REYNA\\SQLREYNA;Database=ApiWebCore;Trusted_Connection=True;MultipleActiveResultSets=true;Application Name=ContextDb;");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
