@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ApiWebCore.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
